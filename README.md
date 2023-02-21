@@ -2,6 +2,7 @@
 my-palette is a python library for extracting and manipulating palettes from images   
  
 ![GitHub](https://img.shields.io/github/license/ys3593/my-palette)
+![GitHub issues](https://img.shields.io/github/issues/ys3593/my-palette)
 
 ## Overview
 - Input: image, URL
