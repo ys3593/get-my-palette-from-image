@@ -26,7 +26,6 @@ class PaletteCreation:
         response = requests.get(url)
         img = Image.open(BytesIO(response.content))
         src = numpy.asarray(img)
-        print(img.mode)
 
         rgb_src = src
 
@@ -162,24 +161,17 @@ class PaletteCreation:
 
 def main():
     palette = PaletteCreation()
-    # modified_image = palette.load_image('download.jpg')
-    # percentage = palette.get_color_percentages(modified_image, 5)
-    # the_palette = palette.get_palette(modified_image, 5)
-    # complementary_palette = palette.get_complementary_palette(modified_image, 5)
-    # least_palette = palette.get_least_palette(modified_image, 3)
-    # most_palette = palette.get_most_palette(modified_image, 3)
+    modified_image = palette.load_image_url('https://apod.nasa.gov/apod/image/2212/SkyArt_Cobianchi_2048.jpg')
+    percentage = palette.get_color_percentages(modified_image, 5)
+    the_palette = palette.get_palette(modified_image, 5)
+    complementary_palette = palette.get_complementary_palette(modified_image, 5)
+    least_palette = palette.get_least_palette(modified_image, 3)
+    most_palette = palette.get_most_palette(modified_image, 3)
     # similar_palette = palette.get_similar_palette(modified_image, 5)
     # contrast_palette = palette.get_contrast_palette(modified_image, 5)
-    #
-    # print(percentage)
-    # print(the_palette)
-    # print(complementary_palette)
-    # print(least_palette)
-    # print(most_palette)
-    # modified_image = palette.load_image_url('https://kinsta.com/wp-content/uploads/2020/09/imag-file-types-1024x512.png')
-    modified_image = palette.load_image_url('https://apod.nasa.gov/apod/image/2212/SkyArt_Cobianchi_2048.jpg')
-    the_palette = palette.get_palette(modified_image, 5)
+
+    print(percentage)
     print(the_palette)
-    palette.present_palette(the_palette)
-
-
+    print(complementary_palette)
+    print(least_palette)
+    print(most_palette)
