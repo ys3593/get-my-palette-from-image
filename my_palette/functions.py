@@ -183,5 +183,3 @@ def main():
     palette.present_palette(the_palette)
 
 
-if __name__ == "__main__":
-    main()

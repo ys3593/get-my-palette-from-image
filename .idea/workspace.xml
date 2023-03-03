@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="60c71b13-f80c-4b82-b5f6-ab4175e4d9b8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/my_palette/tests/download.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_palette/tests/test_all.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-palette/CODE_OF_CONDUCT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-palette/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-palette/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-palette/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-palette/download.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/my_palette/download.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-palette/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_palette/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-palette/integration_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-palette/unit_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit_tests.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MR4mRiqKzD4u1cdYUu8d2Qd34C" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/kysher/Desktop/my-palette/my_palette/tests"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/my_palette/tests" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="60c71b13-f80c-4b82-b5f6-ab4175e4d9b8" name="Changes" comment="" />
+      <created>1677717219933</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677717219933</updated>
+    </task>
+    <servers />
+  </component>
+</project>
