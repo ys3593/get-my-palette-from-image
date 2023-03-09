@@ -14,7 +14,7 @@ readme = "README.md"
 version = "0.0.1"
 requires-python = ">=3.7"
 
-dependencies = ["collections", "numpy", "matplotlib", "opencv-python", "Pillow", "requests", "io", "seaborn"]
+dependencies = ["setuptools", "numpy", "opencv-python", "Pillow", "matplotlib", "scikit-learn", "pytest"]
 
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
