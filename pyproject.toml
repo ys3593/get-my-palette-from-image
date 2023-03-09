@@ -14,7 +14,7 @@ readme = "README.md"
 version = "0.0.1"
 requires-python = ">=3.7"
 
-dependencies = ["collections", "numpy", "matplotlib", "cv2", "PIL", "requests", "io", "seaborn"]
+dependencies = ["collections", "numpy", "matplotlib", "cv2", "Pillow", "requests", "io", "seaborn"]
 
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
