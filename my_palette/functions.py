@@ -116,8 +116,8 @@ class PaletteCreation:
     def get_least_palette(self, image, number):
         percentage_dic = self.get_color_percentages(image, 2 * number)
         sorted_percentage_dic = sorted(percentage_dic.items(), key=lambda x: x[1])[
-                                :number
-                                ]
+            :number
+        ]
         palette = []
         for i in sorted_percentage_dic:
             palette.append(i[0])
@@ -155,16 +155,19 @@ class PaletteCreation:
         plt.show()
 
     def present_percentage(self, percentage):
-        plt.pie(percentage.values(), labels=percentage.keys(), colors=percentage.keys())
+        plt.pie(percentage.values(), labels=percentage.keys(),
+                colors=percentage.keys())
         plt.show()
 
 
 def main():
     palette = PaletteCreation()
-    modified_image = palette.load_image_url('https://apod.nasa.gov/apod/image/2212/SkyArt_Cobianchi_2048.jpg')
+    modified_image = palette.load_image_url(
+        'https://apod.nasa.gov/apod/image/2212/SkyArt_Cobianchi_2048.jpg')
     percentage = palette.get_color_percentages(modified_image, 5)
     the_palette = palette.get_palette(modified_image, 5)
-    complementary_palette = palette.get_complementary_palette(modified_image, 5)
+    complementary_palette = palette.get_complementary_palette(
+        modified_image, 5)
     least_palette = palette.get_least_palette(modified_image, 3)
     most_palette = palette.get_most_palette(modified_image, 3)
     # similar_palette = palette.get_similar_palette(modified_image, 5)
