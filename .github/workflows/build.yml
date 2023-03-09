@@ -59,4 +59,4 @@ jobs:
       - name: Upload coverage
         uses: codecov/codecov-action@v3
         with:
-          coverage-reports: /home/runner/work/my-palette/my_palette/coverage.xml
+          coverage-reports: /home/runner/work/my-palette/my-palette/coverage.xml
