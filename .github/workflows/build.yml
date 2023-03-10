@@ -34,15 +34,23 @@ jobs:
       - name: Install dependencies
         run: |
           make develop
+      
       - name: Build 
         run: |
           make build
+      
+      - name: Autoformat
+        run: |
+          make format
+
       - name: Lint
         run: |
           make lint
+          
       - name: Checks
         run: |
           make checks
+          
       - name: Test
         run: |
           make coverage
