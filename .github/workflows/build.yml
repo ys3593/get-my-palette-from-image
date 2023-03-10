@@ -56,6 +56,6 @@ jobs:
           path: python_junit.xml
         if: ${{ always() }}
 
-      - name: Upload coverage
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
 
