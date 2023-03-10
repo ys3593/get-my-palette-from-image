@@ -48,7 +48,7 @@ jobs:
       #     make checks
       - name: Test
         run: |
-          make test
+          make coverage
       - name: Upload test results
         uses: actions/upload-artifact@v3
         with:
