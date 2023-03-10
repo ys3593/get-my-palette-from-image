@@ -49,7 +49,7 @@ develop = [
     "twine",
     "wheel",
 ]
-
+ 
 [tool.black]
 color = true
 line-length = 120
