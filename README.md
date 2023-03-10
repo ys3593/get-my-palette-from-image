@@ -4,7 +4,7 @@ my-palette is a python library for extracting and manipulating palettes from ima
 ![GitHub](https://img.shields.io/github/license/ys3593/my-palette)
 ![GitHub issues](https://img.shields.io/github/issues/ys3593/my-palette)
 ![Build Status](https://github.com/ys3593/my-palette/actions/workflows/build.yml/badge.svg)
-
+[![codecov](https://codecov.io/gh/ys3593/my-palette/branch/main/graph/badge.svg?token=PZ1MROE5N6)](https://codecov.io/gh/ys3593/my-palette)
 
 ## Overview
 - Input: image, URL
