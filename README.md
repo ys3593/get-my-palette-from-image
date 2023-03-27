@@ -1,5 +1,5 @@
-# my-palette
-my-palette is a python library for extracting and manipulating palettes from images   
+# get-my-palette-from-image
+get-my-palette-from-image is a python library for extracting and manipulating palettes from images   
  
 ![GitHub](https://img.shields.io/github/license/ys3593/my-palette)
 ![GitHub issues](https://img.shields.io/github/issues/ys3593/my-palette)
@@ -17,7 +17,7 @@ my-palette is a python library for extracting and manipulating palettes from ima
 ### Installation
 
 ```
-pip install my-palette
+pip install get-my-palette-from-image
 ```
 ### Usage
 ```
