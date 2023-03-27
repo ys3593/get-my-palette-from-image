@@ -162,11 +162,8 @@ class PaletteCreation:
 
 def main():
     palette = PaletteCreation()
-
     # load image locally
     modified_image = palette.load_image('down.jpg')
-
     # obtain the percentage of colors from the given image
     percentage = palette.get_color_percentages(modified_image, 5)
-
     print(percentage)
