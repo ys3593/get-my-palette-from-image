@@ -192,8 +192,3 @@ def main():
     # present the percentage of colors in the palette via pie graph
     palette.present_percentage(the_palette)
 
-    print(percentage)
-    print(the_palette)
-    print(complementary_palette)
-    print(least_palette)
-    print(most_palette)
