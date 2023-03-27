@@ -169,26 +169,4 @@ def main():
     # obtain the percentage of colors from the given image
     percentage = palette.get_color_percentages(modified_image, 5)
 
-    # get a palette from given image with a self-defined number of colors
-    the_palette = palette.get_palette(modified_image, 5)
-
-    # get a complementary palette from given image with a self-defined number of colors
-    complementary_palette = palette.get_complementary_palette(
-        modified_image, 5)
-
-    # get a palette consisted of a self-defined number of colors with the least percentages
-    least_palette = palette.get_least_palette(modified_image, 3)
-
-    # get a palette consisted of a self-defined number of colors with the most percentages
-    most_palette = palette.get_most_palette(modified_image, 3)
-
-    # present the palette
-    palette.present_palette(the_palette)
-
-    # present the percentage of colors in the palette via pie graph
-    palette.present_percentage(the_palette)
     print(percentage)
-    print(the_palette)
-    print(complementary_palette)
-    print(least_palette)
-    print(most_palette)
