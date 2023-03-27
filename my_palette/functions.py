@@ -166,10 +166,6 @@ def main():
     # load image locally
     modified_image = palette.load_image('down.jpg')
 
-    # load image via url
-    modified_image_url = palette.load_image_url(
-        'https://apod.nasa.gov/apod/image/2212/SkyArt_Cobianchi_2048.jpg')
-
     # obtain the percentage of colors from the given image
     percentage = palette.get_color_percentages(modified_image, 5)
 
