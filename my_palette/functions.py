@@ -162,19 +162,11 @@ class PaletteCreation:
 
 def main():
     palette = PaletteCreation()
-    modified_image = palette.load_image_url(
-        'https://apod.nasa.gov/apod/image/2212/SkyArt_Cobianchi_2048.jpg')
+
+    # load image locally
+    modified_image = palette.load_image('down.jpg')
+
+    # obtain the percentage of colors from the given image
     percentage = palette.get_color_percentages(modified_image, 5)
-    the_palette = palette.get_palette(modified_image, 5)
-    complementary_palette = palette.get_complementary_palette(
-        modified_image, 5)
-    least_palette = palette.get_least_palette(modified_image, 3)
-    most_palette = palette.get_most_palette(modified_image, 3)
-    # similar_palette = palette.get_similar_palette(modified_image, 5)
-    # contrast_palette = palette.get_contrast_palette(modified_image, 5)
 
     print(percentage)
-    print(the_palette)
-    print(complementary_palette)
-    print(least_palette)
-    print(most_palette)

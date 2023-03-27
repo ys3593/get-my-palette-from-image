@@ -14,3 +14,40 @@ my-palette is a python library for extracting and manipulating palettes from ima
   - obtain the percentages of colors from given images
   - find/generate posters/images based on extracted palettes   
  
+### Installation
+
+```
+pip install my-palette
+```
+### Usage
+```
+from my_palette import PaletteCreation
+
+palette = PaletteCreation()
+
+# load image locally
+modified_image = palette.load_image('down.jpg')
+
+# load image via url
+modified_image_url = palette.load_image_url(
+    'https://apod.nasa.gov/apod/image/2212/SkyArt_Cobianchi_2048.jpg')
+
+# obtain the percentage of colors from the given image
+percentage = palette.get_color_percentages(modified_image, 5)
+
+# get a palette from given image with a self-defined number of colors
+the_palette = palette.get_palette(modified_image, 5)
+
+# get a complementary palette from given image with a self-defined number of colors
+complementary_palette = palette.get_complementary_palette(
+    modified_image, 5)
+
+# get a palette consisted of a self-defined number of colors with the least percentages
+least_palette = palette.get_least_palette(modified_image, 3)
+
+# get a palette consisted of a self-defined number of colors with the most percentages
+most_palette = palette.get_most_palette(modified_image, 3)
+```
+
+### Development
+Read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
