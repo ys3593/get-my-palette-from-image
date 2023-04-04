@@ -10,8 +10,20 @@ import seaborn as sns
 
 
 class PaletteCreation:
+    """ This class is for creating a palette from an image.
+    
+    """
     # load image
     def load_image(self, path):
+        """ This method converts an image file into a ndarray for further process. 
+
+        Args:
+            path (str): The path of the image file
+
+        Returns:
+            ndarray: The reshaped image array that represents the original image file for further process
+
+        """
         src = cv2.imread(path)
         # BGR is converted to RGB
         rgb_src = cv2.cvtColor(src, cv2.COLOR_BGR2RGB)
@@ -23,6 +35,15 @@ class PaletteCreation:
         return reshape
 
     def load_image_url(self, url):
+        """ This method converts an image url into a ndarray for further process. 
+
+        Args:
+            url (str): The image url
+
+        Returns:
+            ndarray: The reshaped image array that represents the original image file for further process
+
+        """
         response = requests.get(url)
         img = Image.open(BytesIO(response.content))
         src = numpy.asarray(img)
@@ -47,6 +68,17 @@ class PaletteCreation:
 
     # get given number of rgb colors from the given image using kmeans
     def get_colors(self, image, number):
+        """ This method gets a given number of rgb colors from the given image array using kmeans.
+
+        Args:
+            image (ndarray): The image array obtained with load_image_url method in the class
+            number (str): The number of rgb colors expected 
+
+        Returns:
+            dict: The dict that counts from the result of kmeans.predict(image)
+            list: The list of rgb colors obtained from the image array
+            
+        """
         kmeans = KMeans(n_clusters=number, n_init=10, random_state=1)
         kmeans.fit(image)
         y_kmeans = kmeans.predict(image)
@@ -61,6 +93,16 @@ class PaletteCreation:
 
     # obtain the percentage of colors from the given image
     def get_color_percentages(self, image, number):
+        """ This method obtains the percentage of colors in the palette from the given image array.
+
+        Args:
+            image (ndarray): The image array obtained with load_image_url method in the class
+            number (str): The number of rgb colors expected 
+
+        Returns:
+            dict: The dict with the colors in the palette as its key and the percentages as it value
+            
+        """
         count, rgb_colors = self.get_colors(image, number)
 
         hex_colors = []
@@ -86,6 +128,16 @@ class PaletteCreation:
 
     # get a palette from given image
     def get_palette(self, image, number):
+        """ This method gets a palette from given image array.
+
+        Args:
+            image (ndarray): The image array obtained with load_image_url method in the class
+            number (str): The number of rgb colors expected 
+
+        Returns:
+            list: The palette with the extracted hex colors from the given image array.
+            
+        """
         count, rgb_colors = self.get_colors(image, number)
 
         hex_colors = []
@@ -100,6 +152,16 @@ class PaletteCreation:
 
     # get a complementary palette from given image
     def get_complementary_palette(self, image, number):
+        """ This method gets a complementary palette from given image array.
+
+        Args:
+            image (ndarray): The image array obtained with load_image_url method in the class
+            number (str): The number of rgb colors expected 
+
+        Returns:
+            list: The complementary palette with the extracted hex colors from the given image array.
+            
+        """
         count, rgb_colors = self.get_colors(image, number)
 
         hex_colors = []
@@ -114,6 +176,16 @@ class PaletteCreation:
 
     # get a palette consisted of colors with the least percentages
     def get_least_palette(self, image, number):
+        """ This method gets a palette consisted of colors with the least percentages.
+
+        Args:
+            image (ndarray): The image array obtained with load_image_url method in the class
+            number (str): The number of rgb colors expected 
+
+        Returns:
+            list: The palette with the least percentages of hex colors from the given image array.
+            
+        """
         percentage_dic = self.get_color_percentages(image, 2 * number)
         sorted_percentage_dic = sorted(percentage_dic.items(), key=lambda x: x[1])[
             :number
@@ -126,6 +198,16 @@ class PaletteCreation:
 
     # get a palette consisted of colors with the most percentages
     def get_most_palette(self, image, number):
+        """ This method gets a palette consisted of colors with the most percentages.
+
+        Args:
+            image (ndarray): The image array obtained with load_image_url method in the class
+            number (str): The number of rgb colors expected 
+
+        Returns:
+            list: The palette with the most percentages of hex colors from the given image array.
+            
+        """
         percentage_dic = self.get_color_percentages(image, 2 * number)
         sorted_percentage_dic = sorted(
             percentage_dic.items(), key=lambda x: x[1], reverse=True
@@ -136,34 +218,23 @@ class PaletteCreation:
 
         return palette
 
-    # # obtain a palette with similar colors from the given image
-    # def get_similar_palette(self, image, number):
-    #     count, rgb_colors = self.get_colors(image, number)
-    #     palette = []
-    #
-    #     return palette
-    #
-    # # obtain a palette with contrast colors from the given image
-    # def get_contrast_palette(self, image, number):
-    #     count, rgb_colors = self.get_colors(image, number)
-    #     palette = []
-    #
-    #     return palette
-
     def present_palette(self, palette):
+        """ This method plots the obtained palette.
+
+        Args:
+            palette (list): The obtained palette
+
+        """
         sns.palplot(sns.color_palette(palette))
         plt.show()
 
     def present_percentage(self, percentage):
+        """ This method plots the palette and the percentages of colors in it via pie plotting.
+
+        Args:
+            palette (list): The obtained palette
+
+        """
         plt.pie(percentage.values(), labels=percentage.keys(),
                 colors=percentage.keys())
         plt.show()
-
-
-def main():
-    palette = PaletteCreation()
-    # load image locally
-    modified_image = palette.load_image('down.jpg')
-    # obtain the percentage of colors from the given image
-    percentage = palette.get_color_percentages(modified_image, 5)
-    print(percentage)
