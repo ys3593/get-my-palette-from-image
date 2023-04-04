@@ -6,6 +6,7 @@ get-my-palette-from-image is a python library for extracting and manipulating pa
 ![Build Status](https://github.com/ys3593/my-palette/actions/workflows/build.yml/badge.svg)
 [![codecov](https://codecov.io/gh/ys3593/my-palette/branch/main/graph/badge.svg?token=PZ1MROE5N6)](https://codecov.io/gh/ys3593/my-palette)
 ![PyPI](https://img.shields.io/pypi/v/get-my-palette-from-image)
+![Docs](https://img.shields.io/readthedocs/get-my-palette-from-image)
 
 
 ## Overview
