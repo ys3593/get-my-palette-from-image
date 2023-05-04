@@ -7,13 +7,14 @@ from PIL import Image
 import requests
 from io import BytesIO
 import seaborn as sns
+from scipy import spatial
 
 
 class PaletteCreation:
     """ This class is for creating a palette from an image.
     
     """
-    # load image
+
     def load_image(self, path):
         """ This method converts an image file into a ndarray for further process. 
 
@@ -66,13 +67,12 @@ class PaletteCreation:
         reshape = image.reshape(a * b, c)
         return reshape
 
-    # get given number of rgb colors from the given image using kmeans
     def get_colors(self, image, number):
         """ This method gets a given number of rgb colors from the given image array using kmeans.
 
         Args:
             image (ndarray): The image array obtained with load_image_url method in the class
-            number (str): The number of rgb colors expected 
+            number (int): The number of rgb colors expected
 
         Returns:
             dict: The dict that counts from the result of kmeans.predict(image)
@@ -91,13 +91,12 @@ class PaletteCreation:
 
         return count, rgb_colors
 
-    # obtain the percentage of colors from the given image
     def get_color_percentages(self, image, number):
         """ This method obtains the percentage of colors in the palette from the given image array.
 
         Args:
             image (ndarray): The image array obtained with load_image_url method in the class
-            number (str): The number of rgb colors expected 
+            number (int): The number of rgb colors expected
 
         Returns:
             dict: The dict with the colors in the palette as its key and the percentages as it value
@@ -126,13 +125,12 @@ class PaletteCreation:
 
         return percentage_dic
 
-    # get a palette from given image
     def get_palette(self, image, number):
         """ This method gets a palette from given image array.
 
         Args:
             image (ndarray): The image array obtained with load_image_url method in the class
-            number (str): The number of rgb colors expected 
+            number (int): The number of rgb colors expected
 
         Returns:
             list: The palette with the extracted hex colors from the given image array.
@@ -150,13 +148,12 @@ class PaletteCreation:
 
         return hex_colors
 
-    # get a complementary palette from given image
     def get_complementary_palette(self, image, number):
         """ This method gets a complementary palette from given image array.
 
         Args:
             image (ndarray): The image array obtained with load_image_url method in the class
-            number (str): The number of rgb colors expected 
+            number (int): The number of rgb colors expected
 
         Returns:
             list: The complementary palette with the extracted hex colors from the given image array.
@@ -174,13 +171,12 @@ class PaletteCreation:
 
         return hex_colors
 
-    # get a palette consisted of colors with the least percentages
     def get_least_palette(self, image, number):
         """ This method gets a palette consisted of colors with the least percentages.
 
         Args:
             image (ndarray): The image array obtained with load_image_url method in the class
-            number (str): The number of rgb colors expected 
+            number (int): The number of rgb colors expected
 
         Returns:
             list: The palette with the least percentages of hex colors from the given image array.
@@ -196,13 +192,12 @@ class PaletteCreation:
 
         return palette
 
-    # get a palette consisted of colors with the most percentages
     def get_most_palette(self, image, number):
         """ This method gets a palette consisted of colors with the most percentages.
 
         Args:
             image (ndarray): The image array obtained with load_image_url method in the class
-            number (str): The number of rgb colors expected 
+            number (int): The number of rgb colors expected
 
         Returns:
             list: The palette with the most percentages of hex colors from the given image array.
@@ -238,3 +233,35 @@ class PaletteCreation:
         plt.pie(percentage.values(), labels=percentage.keys(),
                 colors=percentage.keys())
         plt.show()
+
+    def get_similar_palette(self, image, number, given_color):
+        """ This method obtain a palette with similar colors from the given image and given color schema.
+
+        Args:
+            image (ndarray): The image array obtained with load_image_url method in the class
+            number (int): The number of rgb colors expected
+            given_color (str): The color schema expected, including red, blue, green, yellow, black, white, purple, orange and pink
+
+        """
+        color_dict = {'red': [255, 0, 0], 'blue': [0, 0, 255], 'green': [0, 255, 0], 'yellow': [255, 255, 0], 'black': [0, 0, 0], 'white': [255, 255, 255], 'purple': [127, 0, 255], 'orange': [255, 128, 0], 'pink': [255, 0, 255]}
+        count, rgb_colors = self.get_colors(image, number * 5)
+        hex_colors = []
+
+        if color_dict.get(given_color):
+            given_color_rgb = color_dict[given_color]
+        else:
+            print("please choose color schema from red, blue, green, yellow, black, white, purple, orange, pink")
+            return
+
+        # find the number most similar colors from these total number * 3 colors: kdtree
+        tree = spatial.KDTree(rgb_colors)
+        query_color = [given_color_rgb]
+        d, i = tree.query(query_color, k=number)
+
+        for color in tree.data[i][0]:
+            hex_color = "#"
+            for j in color:
+                hex_color += "{:02x}".format(int(j))
+            hex_colors.append(hex_color)
+
+        return hex_colors
