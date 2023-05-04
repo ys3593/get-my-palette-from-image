@@ -50,6 +50,10 @@ least_palette = palette.get_least_palette(modified_image, 3)
 
 # get a palette consisted of a self-defined number of colors with the most percentages
 most_palette = palette.get_most_palette(modified_image, 3)
+
+# get a palette with consisted of a self-defined number of similar colors from the given image and given color schema.
+# the color schema includes red, blue, green, yellow, black, white, purple, orange, and pink
+similar_palette = palette.get_similar_palette(modified_image, 3, 'black')
 ```
 
 ### Development
