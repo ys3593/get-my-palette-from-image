@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 project = 'get-my-palette-from-image'
 copyright = '2023, Yaochen Shen'
 author = 'Yaochen Shen'
-release = '0.1.1'
+release = '0.1.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
