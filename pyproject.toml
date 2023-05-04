@@ -11,7 +11,7 @@ name = "get-my-palette-from-image"
 authors = [{name = "Yaochen Shen", email = "ys3593@columbia.edu"}]
 description="get-my-palette-from-image is a python library for extracting and manipulating palettes from images"
 readme = "README.md"
-version = "0.1.2"
+version = "0.1.3"
 requires-python = ">=3.7"
 
 dependencies = ["seaborn", "setuptools", "numpy", "opencv-python", "Pillow", "matplotlib", "scikit-learn", "pytest", "scipy"]
@@ -33,7 +33,7 @@ classifiers = [
 file = "LICENSE"
 
 [project.urls]
-repository = "https://github.com/ys3593/my_palette"
+repository = "https://github.com/ys3593/get-my-palette-from-image"
 
 [project.optional-dependencies]
 develop = [
