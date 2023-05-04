@@ -43,3 +43,9 @@ def test_get_most_palette():
     modified_image = palette.load_image_url('https://apod.nasa.gov/apod/image/2212/SkyArt_Cobianchi_2048.jpg')
     most_palette = palette.get_most_palette(modified_image, 3)
     assert most_palette == ['#7a725d', '#555345', '#3b361f']
+
+def test_get_most_palette():
+    palette = PaletteCreation()
+    modified_image = palette.load_image_url('https://apod.nasa.gov/apod/image/2212/SkyArt_Cobianchi_2048.jpg')
+    most_palette = palette.get_similar_palette(modified_image, 3, 'black')
+    assert most_palette == ['#120802', '#241b0a', '#392f12']
