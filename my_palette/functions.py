@@ -255,9 +255,6 @@ class PaletteCreation:
 
         if color_dict.get(given_color):
             given_color_rgb = color_dict[given_color]
-        else:
-            print("please choose color schema from red, blue, green, yellow, black, white, purple, orange, pink")
-            return
 
         # find the number most similar colors from these total number * 3 colors: kdtree
         tree = spatial.KDTree(rgb_colors)
