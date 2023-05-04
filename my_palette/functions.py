@@ -243,7 +243,8 @@ class PaletteCreation:
             given_color (str): The color schema expected, including red, blue, green, yellow, black, white, purple, orange and pink
 
         """
-        color_dict = {'red': [255, 0, 0], 'blue': [0, 0, 255], 'green': [0, 255, 0], 'yellow': [255, 255, 0], 'black': [0, 0, 0], 'white': [255, 255, 255], 'purple': [127, 0, 255], 'orange': [255, 128, 0], 'pink': [255, 0, 255]}
+        color_dict = {'red': [255, 0, 0], 'blue': [0, 0, 255], 'green': [0, 255, 0], 'yellow': [255, 255, 0], 'black': [0, 0, 0], 
+                      'white': [255, 255, 255], 'purple': [127, 0, 255], 'orange': [255, 128, 0], 'pink': [255, 0, 255]}
         count, rgb_colors = self.get_colors(image, number * 5)
         hex_colors = []
 
